@@ -1,0 +1,74 @@
+* {
+  background-color: blue;
+}
+
+h1 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  animation: appear .5s ease forwards 3s;
+}
+
+#logoL {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#logoL path:nth-child(1) {
+  stroke-dasharray: 508.5;
+  animation: disappearC 3s ease forwards;
+}
+#logoL path:nth-child(2) {
+  stroke-dasharray: 312.9;
+  animation: disappearJ 3s ease forwards;
+}
+#logoL path:nth-child(3) {
+  stroke-dasharray: 755.6;
+  animation: disappearM 3s ease forwards;
+}
+
+@keyframes disappearC {
+  0% {
+    stroke-dashoffset: 508.5
+  }
+  50% {
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dashoffset: 508.5
+  }
+}
+
+@keyframes disappearJ {
+  0% {
+    stroke-dashoffset: 312.9
+  }
+  50% {
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dashoffset: 312.9
+  }
+}
+
+@keyframes disappearM {
+  0% {
+    stroke-dashoffset: 755.6
+  }
+  50% {
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dashoffset: 755.6
+  }
+}
+
+@keyframes appear {
+  to {
+    opacity: 1;
+  }
+}

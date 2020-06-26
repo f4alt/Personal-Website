@@ -328,6 +328,109 @@ html, body {
   padding-bottom: 20px;
 }
 
+/* LOGO ANIMATION */
+#logoS {
+  animation: fill .5s ease forwards 2.6s;
+}
+
+#logoS path:nth-child(1) {
+  stroke-dasharray: 150;
+  stroke-dashoffset: 150;
+  animation: line-anim 2s ease forwards;
+}
+#logoS path:nth-child(2) {
+  stroke-dasharray: 110;
+  stroke-dashoffset: 110;
+  animation: line-anim 2s ease forwards .3s;
+}
+#logoS path:nth-child(3) {
+  stroke-dasharray: 254;
+  stroke-dashoffset: 254;
+  animation: line-anim 2s ease forwards .6s;
+}
+
+@keyframes line-anim {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes fill {
+  from {
+    fill: transparent;
+  }
+  to {
+    fill: var(--bright);
+  }
+}
+
+#logoL {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#logoL path:nth-child(1) {
+  stroke-dasharray: 508.5;
+  animation: disappearC 3s ease forwards;
+}
+#logoL path:nth-child(2) {
+  stroke-dasharray: 312.9;
+  animation: disappearJ 3s ease forwards;
+}
+#logoL path:nth-child(3) {
+  stroke-dasharray: 755.6;
+  animation: disappearM 3s ease forwards;
+}
+
+@keyframes disappearC {
+  0% {
+    stroke-dashoffset: 508.5
+  }
+  50% {
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dashoffset: 508.5
+  }
+}
+
+@keyframes disappearJ {
+  0% {
+    stroke-dashoffset: 312.9
+  }
+  50% {
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dashoffset: 312.9
+  }
+}
+
+@keyframes disappearM {
+  0% {
+    stroke-dashoffset: 755.6
+  }
+  50% {
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dashoffset: 755.6
+  }
+}
+
+#appear-anim {
+  opacity: 0;
+  animation: appear 1s ease forwards 3s;
+}
+
+@keyframes appear {
+  to {
+    opacity: 1;
+  }
+}
+
 /* COLOR PALETTE */
 :root {
   --background: #8eb8e5;

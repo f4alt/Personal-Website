@@ -8,6 +8,10 @@ app.get('/', function(req, res) {
   res.render("index");
 });
 
+app.get('/daily', function(req, res) {
+  res.render("daily");
+});
+
 app.get('*', function(req, res) {
   res.send("PAGE NOT FOUND")
 });
