@@ -1,0 +1,340 @@
+/* MAIN */
+html, body {
+  background: var(--background);
+  font-family: 'Libre Baskerville', serif;
+  height: 100%;
+}
+
+/* NAVBAR */
+#mainNav .navbar-brand {
+  color: var(--bright);
+  font-size: 1.5rem;
+}
+#mainNav .navbar-brand:hover {
+  color: white;
+}
+
+#mainNav .nav-link {
+  color: var(--contrast);
+}
+
+#mainNav .nav-link:hover {
+  color: var(--bright);
+}
+
+.navbar.scrolled {
+  background: var(--emphasis);
+  opacity: .8;
+  transition: background 200ms;
+}
+
+/* HOME */
+/* RANDOM IMAGE SELECTION WITH CUSTOM POSITIONS FOR EACH IMAGE */
+.default-image {
+ 	background: url('../imgs/sad-icecream.jpg');
+	background-position: 30% 0px;
+ 	background-size: cover;
+ 	height: 100%;
+ 	overflow: hidden;
+  font-size: 4rem;
+}
+
+.background0 {
+  background: url('../imgs/random-pool/dog-car.jpg');
+  background-position: 70% 0px;
+  background-size: cover;
+  height: 100%;
+  overflow: hidden;
+}
+
+.background1 {
+  background: url('../imgs/random-pool/circuit-board.jpg');
+  background-position: 70% 0px;
+  background-size: cover;
+  height: 100%;
+  overflow: hidden;
+}
+
+.background2 {
+  background: url('../imgs/random-pool/code-glasses.jpg');
+  background-position: 50%;
+  background-size: cover;
+  height: 100%;
+  overflow: hidden;
+}
+
+.background3 {
+  background: url('../imgs/random-pool/dog-reading.jpg');
+  background-position: 60%;
+  background-size: cover;
+  height: 100%;
+  overflow: hidden;
+}
+
+.background4 {
+  background: url('../imgs/random-pool/dog-tongue.jpg');
+    background-position: 51%;
+  background-size: cover;
+  height: 100%;
+  overflow: hidden;
+}
+
+.background5 {
+  background: url('../imgs/random-pool/keyboard.jpg');
+    background-position: 51%;
+  background-size: cover;
+  height: 100%;
+  overflow: hidden;
+}
+
+.welcome-banner {
+  height: 100%;
+  align-items: center;
+  text-align: center;
+  font-size: 3rem;
+  color: var(--contrast);
+}
+
+#welcome-msg .name-emphasis {
+  color: var(--bright);
+}
+
+@media (max-width: 450px) {
+  #welcome-msg .welcome-banner {
+    font-size: 2rem;
+    padding: 3px;
+  }
+}
+
+.row {
+  margin: 0px;
+}
+
+.btn-one {
+    color: var(--contrast);
+    transition: all 0.3s;
+    position: relative;
+    font-size: 1.5rem;
+}
+.btn-one span {
+    transition: all 0.3s;
+}
+.btn-one::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity: 0;
+    transition: all 0.3s;
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+    border-top-style: solid;
+    border-bottom-style: solid;
+    border-top-color: red;
+    border-bottom-color: red;
+    transform: scale(0.1, 1);
+}
+.btn-one:hover span {
+    letter-spacing: 2px;
+}
+.btn-one:hover::before {
+    opacity: 1;
+    transform: scale(1, 1);
+}
+.btn-one::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    transition: all 0.3s;
+    background-color: var(--emphasis);
+    opacity: .3;
+}
+.btn-one:hover::after {
+    opacity: 0;
+    transform: scale(0.1, 1);
+}
+
+/* ABOUT */
+
+.underline {
+  margin-left: 47%;
+  background: black;
+  height: 4px;
+  width: 70px;
+}
+
+.bar {
+  border: 1px solid black;
+  margin: 10px 10%;
+  font-size: 12pt;
+  height: 28px;
+  border-radius: 25px;
+}
+
+.bar-fill {
+  border-radius: 25px;
+  background: var(--emphasis);
+  color: var(--contrast);
+  height: 26px;
+}
+
+.bar-fill span {
+  padding-left: 9px;
+}
+
+#logos i {
+  font-size: 5rem;
+}
+
+@media (max-width:465px) {
+  #logos i {
+    font-size: 3rem;
+  }
+}
+
+.hovered {
+  color: var(--bright);
+}
+
+/* PROJECTS */
+.card{
+  background: transparent;
+  border: none;
+  position: relative;
+  cursor: pointer;
+}
+
+.card .face{
+  padding: 15%;
+  transition: 0.5s;
+  border-radius: 10px;
+}
+
+.card .face.face1{
+    position: relative;
+    background: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    transform: translateY(100px);
+}
+
+.card:hover .face.face1{
+    background: var(--bright);
+    transform: translateY(0);
+}
+
+.card .face.face1 .content{
+    opacity: 0.2;
+    transition: 0.5s;
+}
+
+.card:hover .face.face1 .content{
+    opacity: 1;
+}
+
+.card .face.face1 .content img{
+    max-width: 100px;
+}
+
+.card .face.face1 .content h3{
+    margin: 10px 0 0;
+    padding: 0;
+    color: var(--contrast);
+    text-align: center;
+    font-size: 1.5em;
+}
+
+.card .face.face2{
+    position: relative;
+    background: var(--contrast);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5%;
+    box-sizing: border-box;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
+    transform: translateY(-100px);
+}
+
+.card:hover .face.face2{
+    transform: translateY(0);
+}
+
+.card .face.face2 .content p{
+    margin: 0;
+    padding: 0;
+}
+
+.card .face.face2 .content a{
+    margin: 5% 0 0;
+    display:  inline-block;
+    text-decoration: none;
+    font-weight: 900;
+    color: black;
+    padding: 5px;
+    border: 1px solid #333;
+}
+
+.card .face.face2 .content a:hover{
+    background: var(--bright);
+    color: var(--contrast);
+}
+
+.send-top i {
+  color: var(--emphasis);
+  font-size: 3.5rem;
+  padding: 5px;
+  border: 1px solid black;
+  border-radius: 10px;
+  background: var(--background-gradient);
+}
+
+.send-top i:hover {
+  opacity: .4
+}
+
+/* FOOTER */
+.footer {
+  display: block;
+  background: var(--background-gradient);
+  height: 150px;
+  position: relative;
+}
+
+.footer i {
+  font-size: 2rem;
+  /* color: black; */
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
+.footer-bottom {
+  color: var(--copyright);
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  font-size: .75rem;
+  padding-bottom: 20px;
+}
+
+/* COLOR PALETTE */
+:root {
+  --background: #8eb8e5;
+  --background-gradient: #7c99b4;
+  --emphasis: #500000;
+  --bright: #1bacbf;
+  --contrast: #f0f3f5;
+  --neutral: #5b5750;
+  --copyright: #98c1d9;
+}
