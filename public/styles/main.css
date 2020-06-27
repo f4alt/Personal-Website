@@ -95,7 +95,7 @@ html, body {
   color: var(--contrast);
 }
 
-#welcome-msg .name-emphasis {
+.name-emphasis {
   color: var(--bright);
 }
 
@@ -162,6 +162,10 @@ html, body {
 }
 
 /* ABOUT */
+.profile-pic {
+  transform: translate(-0, -25%);
+  border-radius: 100px;
+}
 
 .underline {
   margin-left: 47%;
@@ -219,7 +223,7 @@ html, body {
 
 .card .face.face1{
     position: relative;
-    background: #333;
+    /* background: #333; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -242,7 +246,7 @@ html, body {
 }
 
 .card .face.face1 .content img{
-    max-width: 100px;
+    max-width: 200px;
 }
 
 .card .face.face1 .content h3{
@@ -300,6 +304,11 @@ html, body {
 
 .send-top i:hover {
   opacity: .4
+}
+
+.PWcover {
+  background-image: url('../imgs/website.png');
+  background-size: cover;
 }
 
 /* FOOTER */
