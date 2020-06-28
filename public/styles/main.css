@@ -449,10 +449,10 @@ html, body {
 
 /* COLOR PALETTE */
 :root {
-  --background: #8eb8e5;
-  --background-gradient: #7c99b4;
+  --background: #91C6FF;
+  --background-gradient: #AB94F2;
   --emphasis: #500000;
-  --bright: #1bacbf;
+  --bright: #6A7698;
   --contrast: #f0f3f5;
   --neutral: #5b5750;
   --copyright: #98c1d9;
