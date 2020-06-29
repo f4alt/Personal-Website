@@ -1,4 +1,4 @@
-// Scroll animation for all platform support using jquery
+/* Scroll animation for all platform support using jquery */
 $('.sender').on('click', function(e) {
   if(this.hash != '') {
     e.preventDefault();
@@ -12,6 +12,7 @@ $('.sender').on('click', function(e) {
   }
 });
 
+/* Random background selector */
 function randombg() {
   var random= Math.floor(Math.random() * 6) + 0;
   var mainImage = document.querySelector(".default-image");
@@ -19,6 +20,7 @@ function randombg() {
   mainImage.classList.toggle("background"+random);
 }
 
+/* change navbar transparency on movement from start position */
 function navbarFill() {
   window.addEventListener("scroll", function(){
       var nav = document.querySelector("#mainNav");
@@ -26,6 +28,7 @@ function navbarFill() {
     })
 }
 
+/* Hover about me items for text popup */
 function itemHover() {
   var logos = document.querySelectorAll("#logos i");
   var aboutLogos = document.querySelectorAll("#logos span");

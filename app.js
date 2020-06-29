@@ -1,16 +1,15 @@
-const express = require("express");
-const app = express();
+const express = require("express"),
+      app     = express();
+
+// routes
+var indexRoutes = require('./routes/index');
+var dailyRoutes  = require('./routes/daily');
 
 app.use(express.static("public"));
 app.set("view engine", "ejs");
 
-app.get('/', function(req, res) {
-  res.render("index");
-});
-
-app.get('/daily', function(req, res) {
-  res.render("daily");
-});
+app.use(indexRoutes);
+app.use(dailyRoutes);
 
 app.get('*', function(req, res) {
   res.send("PAGE NOT FOUND")

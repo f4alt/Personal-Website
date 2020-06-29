@@ -92,6 +92,7 @@ html, body {
   align-items: center;
   text-align: center;
   font-size: 3rem;
+  text-shadow: 0 0 3px var(--emphasis);
   color: var(--contrast);
 }
 
@@ -450,7 +451,7 @@ html, body {
 /* COLOR PALETTE */
 :root {
   --background: #91C6FF;
-  --background-gradient: #AB94F2;
+  --background-gradient: #6A7698;
   --emphasis: #500000;
   --bright: #6A7698;
   --contrast: #f0f3f5;
