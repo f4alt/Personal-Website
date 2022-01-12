@@ -29,68 +29,68 @@ function navbarFill() {
 }
 
 /* Hover about me items for text popup */
-function itemHover() {
-  var logos = document.querySelectorAll("#logos i");
-  var aboutLogos = document.querySelectorAll("#logos span");
-
-  for (var i = 0; i < logos.length; i++) {
-    logos[i].addEventListener("mouseover", function() {
-      this.classList.add("hovered");
-    });
-    logos[i].addEventListener("mouseout", function() {
-      this.classList.remove("hovered");
-    });
-  }
-
-  logos[0].addEventListener("mouseover", function() {
-    aboutLogos[0].classList.remove("d-none");
-  });
-  logos[0].addEventListener("mouseout", function() {
-    aboutLogos[0].classList.add("d-none");
-  });
-
-  logos[1].addEventListener("mouseover", function() {
-    aboutLogos[1].classList.remove("d-none");
-  });
-  logos[1].addEventListener("mouseout", function() {
-    aboutLogos[1].classList.add("d-none");
-  });
-
-  logos[2].addEventListener("mouseover", function() {
-    aboutLogos[2].classList.remove("d-none");
-  });
-  logos[2].addEventListener("mouseout", function() {
-    aboutLogos[2].classList.add("d-none");
-  });
-
-  logos[3].addEventListener("mouseover", function() {
-    aboutLogos[3].classList.remove("d-none");
-  });
-  logos[3].addEventListener("mouseout", function() {
-    aboutLogos[3].classList.add("d-none");
-  });
-
-  logos[4].addEventListener("mouseover", function() {
-    aboutLogos[4].classList.remove("d-none");
-  });
-  logos[4].addEventListener("mouseout", function() {
-    aboutLogos[4].classList.add("d-none");
-  });
-
-  logos[5].addEventListener("mouseover", function() {
-    aboutLogos[5].classList.remove("d-none");
-  });
-  logos[5].addEventListener("mouseout", function() {
-    aboutLogos[5].classList.add("d-none");
-  });
-
-  logos[6].addEventListener("mouseover", function() {
-    aboutLogos[6].classList.remove("d-none");
-  });
-  logos[6].addEventListener("mouseout", function() {
-    aboutLogos[6].classList.add("d-none");
-  });
-}
+// function itemHover() {
+//   var logos = document.querySelectorAll("#logos i");
+//   var aboutLogos = document.querySelectorAll("#logos span");
+//
+//   for (var i = 0; i < logos.length; i++) {
+//     logos[i].addEventListener("mouseover", function() {
+//       this.classList.add("hovered");
+//     });
+//     logos[i].addEventListener("mouseout", function() {
+//       this.classList.remove("hovered");
+//     });
+//   }
+//
+//   logos[0].addEventListener("mouseover", function() {
+//     aboutLogos[0].classList.remove("d-none");
+//   });
+//   logos[0].addEventListener("mouseout", function() {
+//     aboutLogos[0].classList.add("d-none");
+//   });
+//
+//   logos[1].addEventListener("mouseover", function() {
+//     aboutLogos[1].classList.remove("d-none");
+//   });
+//   logos[1].addEventListener("mouseout", function() {
+//     aboutLogos[1].classList.add("d-none");
+//   });
+//
+//   logos[2].addEventListener("mouseover", function() {
+//     aboutLogos[2].classList.remove("d-none");
+//   });
+//   logos[2].addEventListener("mouseout", function() {
+//     aboutLogos[2].classList.add("d-none");
+//   });
+//
+//   logos[3].addEventListener("mouseover", function() {
+//     aboutLogos[3].classList.remove("d-none");
+//   });
+//   logos[3].addEventListener("mouseout", function() {
+//     aboutLogos[3].classList.add("d-none");
+//   });
+//
+//   logos[4].addEventListener("mouseover", function() {
+//     aboutLogos[4].classList.remove("d-none");
+//   });
+//   logos[4].addEventListener("mouseout", function() {
+//     aboutLogos[4].classList.add("d-none");
+//   });
+//
+//   logos[5].addEventListener("mouseover", function() {
+//     aboutLogos[5].classList.remove("d-none");
+//   });
+//   logos[5].addEventListener("mouseout", function() {
+//     aboutLogos[5].classList.add("d-none");
+//   });
+//
+//   logos[6].addEventListener("mouseover", function() {
+//     aboutLogos[6].classList.remove("d-none");
+//   });
+//   logos[6].addEventListener("mouseout", function() {
+//     aboutLogos[6].classList.add("d-none");
+//   });
+// }
 
 /* Sets scroll triggers and location on click to navigate through website */
 function scrolls() {
