@@ -8,7 +8,12 @@ const flash = require("connect-flash");
 // routes
 var indexRoutes = require('./routes/index');
 var dailyRoutes  = require('./routes/daily');
-var contact = require('./routes/contact')
+var contact = require('./routes/contact');
+
+// REMOVE ME, and route
+var CSCE445 = require('./routes/CSCE445');
+app.use(CSCE445);
+// END REMOVE
 
 app.use(express.static("public"));
 app.set("view engine", "ejs");
