@@ -11,7 +11,9 @@ var dailyRoutes  = require('./routes/daily');
 var contact = require('./routes/contact');
 
 // REMOVE ME, and route
-var CSCE445 = require('./routes/CSCE445');
+var CSCE445 = require('./routes/CSCE445/CSCE445');
+var CSCE445_1 = require('./routes/CSCE445/CSCE445_1');
+app.use(CSCE445_1);
 app.use(CSCE445);
 // END REMOVE
 
