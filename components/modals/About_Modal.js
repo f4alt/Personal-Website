@@ -1,17 +1,34 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 export default function About_Modal(props) { 
   const [Fullscreen, setFullscreen] = useState(false);
+  
+  useEffect(() => {
+    const handleEsc = (event) => {
+       if (event.keyCode === 27) {
+        props.setShowModal(false);
+      }
+    };
+    window.addEventListener('keydown', handleEsc);
+
+    return () => {
+      window.removeEventListener('keydown', handleEsc);
+    };
+  }, []);
+
   return (
         <>
       {props.open ? (
         <>
           <div
             className="center flex items-center overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none"
+            onClick={() => props.setShowModal(false)}
           >
             <div className={`${Fullscreen ? "" : "fullscreen"} relative w-auto mx-auto max-w-3xl`}>
               {/*content*/}
-              <div className={`${Fullscreen ? "" : "fullscreen"} rounded-lg relative flex flex-col bg-background`}>
+              <div className={`${Fullscreen ? "" : "fullscreen"} rounded-lg relative flex flex-col bg-lightblue`}
+                   onClick={(e) => e.stopPropagation()}
+              >
                 {/*header*/}
                 <div className="flex items-center justify-between p-2 border-solid border-slate-200 rounded-t">
                   <div>
@@ -31,12 +48,10 @@ export default function About_Modal(props) {
                   </div>
                   <div className={`${Fullscreen ? "" : "fullscreen-text"} px-6 py-4`}>
                     I'm <span class="name-emphasis">Christopher</span>, a dog loving, piano playing, 
-                    tech fanatic from Corpus Christi, Texas. Currently, I am a full time Senior 
-                    Computer Science major, Cyber Security and Embedded Systems Integration minor 
-                    at Texas A&M University College Station but I'm still not sure what I want to be 
-                    <em> when I grow up</em> yet. My hobbies span from hardware and systems engineering, 
-                    to software and web development and .. everything in between! 
-                    <br/>Keep scrolling to see some of my skills and recent projects. Thanks for 
+                    tech fan from Corpus Christi, Texas. Currently, I am a full time Software Developer.
+                    My interests span from hardware and systems engineering, 
+                    to software, web development, and .. everything in between! 
+                    <br/>Head over to 'Projects' to see some of my skills and recent projects. Thanks for 
                     checking out my website!
                   </div>
                 </div>

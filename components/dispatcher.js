@@ -88,6 +88,13 @@ const processUserInput = (input, page_comps, line_state) => {
         case "ls":
           formatOutput(page_comps.ls, 20);
           return 0;
+        case "quit":
+        case "exit":
+          window.open('https://www.youtube.com/watch?v=dQw4w9WgXcQ')
+          line_state.set([...line_state.data,
+            <TerminalOutput>{curr_prompt + ' ' + input}</TerminalOutput>,
+            <TerminalOutput>    No, don't leave!</TerminalOutput>]);
+          return 0;
         case "cd":
           const path = handleCd(cmd[1], page_comps.ls);
 

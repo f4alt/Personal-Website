@@ -1,17 +1,34 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 export default function Index_Modal(props) { 
   const [Fullscreen, setFullscreen] = useState(true);
+
+  useEffect(() => {
+    const handleEsc = (event) => {
+       if (event.keyCode === 27) {
+        props.setShowModal(false);
+      }
+    };
+    window.addEventListener('keydown', handleEsc);
+
+    return () => {
+      window.removeEventListener('keydown', handleEsc);
+    };
+  }, []);
+
   return (
         <>
       {props.open ? (
         <>
           <div
             className="center flex items-center overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none"
+            onClick={() => props.setShowModal(false)}
           >
             <div className={`${Fullscreen ? "fullscreen" : ""} relative w-auto mx-auto max-w-3xl`}>
               {/*content*/}
-              <div className={`${Fullscreen ? "fullscreen" : ""} rounded-lg relative flex flex-col bg-background`}>
+              <div className={`${Fullscreen ? "fullscreen" : ""} rounded-lg relative flex flex-col bg-background`}
+                   onClick={(e) => e.stopPropagation()}
+              >
                 {/*header*/}
                 <div className="flex items-center justify-between p-2 border-solid border-slate-200 rounded-t">
                   <div>

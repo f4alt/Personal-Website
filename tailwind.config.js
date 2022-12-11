@@ -13,7 +13,9 @@ module.exports = {
         'dir': '#3B78FF',
         'exe': '#16C60C',
         'maroon': '#c90000',
-        'background': '#f2f7ff',
+        'lightblue': '#f2f7ff',
+        'darkblue': '#252a33',
+        'sm-text': '#abcbff',
       }
     },
   },
