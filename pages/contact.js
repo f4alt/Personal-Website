@@ -49,7 +49,7 @@ export default function Contact() {
       <Terminal page_comps={Page_Comps} />
       <Contact_Modal open={showModal} setShowModal={setShowModal}/>
     </div>
-    <div className="sm-screen">
+    <div className="sm:hidden sm-screen">
     <div className={`relative w-auto mx-auto max-w-3xl`}>
           {/*content*/}
           <div className={`rounded-lg relative flex flex-col bg-darkblue text-sm-text`}

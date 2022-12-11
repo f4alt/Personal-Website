@@ -46,7 +46,7 @@ export default function About() {
       <About_Modal open={showModal} setShowModal={setShowModal}/>
       {/* <Test_Modal open={showTestModal} setShowModal={setShowTestModal}/> */}
     </div>
-    <div className="sm-screen">
+    <div className="sm:hidden sm-screen">
     <div className={`relative w-auto mx-auto max-w-3xl`}>
           {/*content*/}
           <div className={`rounded-lg relative flex flex-col bg-darkblue text-sm-text`}

@@ -34,21 +34,18 @@ O--+=-=+--O      2\"2          - -         -   -        ~  z         =   =\n\
       <Terminal page_comps={Page_Comps} />
       <Projects_Modal open={showModal} setShowModal={setShowModal}/>
     </div>
-    <div
-        class="flex overflow-x-scroll pb-10 pt-10 hide-scroll-bar"
-      >
         <div
-          class="flex flex-nowrap"
+          className="sm:hidden flex flex-wrap justify-center"
         >
-          <div class="card grid">
-                        <div class="face face1">
-                            <div class="content">
+          <div className="card grid">
+                        <div className="face face1">
+                            <div className="content">
                                 <img src="imgs/project-cards/marbleamerica.png"/>
                                 <h3>marbleamericaonline.com</h3>
                             </div>
                         </div>
-                        <div class="face face2">
-                            <div class="content">
+                        <div className="face face2">
+                            <div className="content">
                                 <p>Client website
                                 HTML/CSS/JavaScript built on top of bigcommerce store
                                 </p>
@@ -57,15 +54,15 @@ O--+=-=+--O      2\"2          - -         -   -        ~  z         =   =\n\
                         </div>
                     </div>
           {/* card 2 */}
-          <div class="card grid">
-                        <div class="face face1">
-                            <div class="content">
+          <div className="card grid">
+                        <div className="face face1">
+                            <div className="content">
                                 <img src="imgs/project-cards/brlcad.png"/>
                                 <h3>BRL-CAD</h3>
                             </div>
                         </div>
-                        <div class="face face2">
-                            <div class="content">
+                        <div className="face face2">
+                            <div className="content">
                             <p>Full-Time Software Developer for BRL-CAD
                             </p>
                             <a target="_blank" href="https://github.com/BRL-CAD/brlcad">Github</a>
@@ -74,15 +71,15 @@ O--+=-=+--O      2\"2          - -         -   -        ~  z         =   =\n\
                         </div>
                     </div>
                     {/* card 3 */}
-                    <div class="card grid">
-                        <div class="face face1">
-                            <div class="content">
+                    <div className="card grid">
+                        <div className="face face1">
+                            <div className="content">
                                 <img src="imgs/project-cards/allstar.png"/>
                                 <h3>Ham Radio via VoIP</h3>
                             </div>
                         </div>
-                        <div class="face face2">
-                            <div class="content">
+                        <div className="face face2">
+                            <div className="content">
                                 <p>Built Allstar node on a Rasberry pi which allows ham radio
                                 operation to anyone in the world over the internet
                                 </p>
@@ -91,22 +88,21 @@ O--+=-=+--O      2\"2          - -         -   -        ~  z         =   =\n\
                         </div>
                     </div>
                     {/* card 4 */}
-                    <div class="card grid">
-                        <div class="face face1">
-                            <div class="content">
+                    <div className="card grid">
+                        <div className="face face1">
+                            <div className="content">
                                 <img src="imgs/project-cards/allstar.png"/>
                                 <h3>mcgregorc.com</h3>
                             </div>
                         </div>
-                        <div class="face face2">
-                            <div class="content">
+                        <div className="face face2">
+                            <div className="content">
                                 <p>This site - <br/>Node + React.</p>
                                 <a target="_blank" href="https://github.com/f4alt/Personal-Website">Github Repo</a>
                             </div>
                         </div>
                     </div>
         </div>
-      </div>
     </main>
   );
 }
