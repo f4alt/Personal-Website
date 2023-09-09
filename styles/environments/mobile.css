@@ -135,6 +135,7 @@
    height: 96%;
    display: grid;
    max-height: 88vh;
+   margin-bottom: 20px;
 }
 
 .mobile .faux-window-buttons {
