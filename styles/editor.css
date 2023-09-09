@@ -1,0 +1,38 @@
+.file .file-name {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    flex: 1;
+    padding: 2px 5px;
+  }
+
+.file :hover {
+    background-color: var(--secondary-med-opacity);
+    color: var(--black);
+}
+
+.file div {
+    color: var(--white);
+    border: none;
+}
+
+.file input {
+    /* border: none; */
+    max-width: 150px;
+    font-size: 1em;
+    background-color: var(--secondary);
+    padding-left: 5px;
+    border: 1px solid var(--primary);
+    border-radius: var(--rounding) 0 0 var(--rounding);
+}
+
+.size-controller {
+    height: 60vh;
+    width: 60vw;
+}
+
+.fullscreen .size-controller {
+    height: 100%;
+    width: 90vw;
+}
+

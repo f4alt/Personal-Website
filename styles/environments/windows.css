@@ -1,0 +1,428 @@
+/*****
+ * Scrollbar
+ ***********/  
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+    width: 12px;
+ }
+   
+ *::-webkit-scrollbar-track {
+    background: transparent;
+ }
+ 
+ *::-webkit-scrollbar-thumb {
+    background-color: var(--primary);
+    border-radius: 0;
+ }
+
+ /*****
+ * Faux Window
+ ***********/  
+ 
+ .faux-window-header {
+    background-color: var(--primary);
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0;
+    cursor: default;
+    align-items: center;
+ 
+    border-radius: var(--rounding) var(--rounding) 0 0;
+    flex-direction: row-reverse;
+ }
+
+ .faux-window-header h3 { 
+    background-color: transparent;
+    border: none;
+    border-radius: var(--rounding) var(--rounding) 0 0;
+    font-size: small;
+    transform: translateX(0);
+    height: 20px;
+    padding: 0 1%;
+ }
+
+ .tab-content {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+    left: 11px;
+    width: calc(100% - 125px);
+    height: auto;
+    transform: translateX(0);
+ }
+
+.tab {
+   display: flex;
+   flex-direction: row;
+   background-color: var(--primary);
+   color: var(--secondary);
+   border-radius: var(--rounding) var(--rounding) 0 0;
+   padding: 2px 5px;
+   margin: 0 5px;
+   align-items: center;
+   justify-content: center;
+   white-space: nowrap;
+   overflow: hidden;
+}
+
+.tab h3 {
+   font-size: small;
+   font-weight: normal;
+}
+
+.tab:hover {
+   background-color: var(--secondary-low-opacity);
+}
+
+.tab.selected {
+   min-width: 100px;
+   background-color: var(--secondary);
+   color: var(--primary);
+}
+
+.tab-content button {
+   display: flex;
+   background-color: transparent;
+   color: var(--secondary);
+   border: none;
+   border-radius: 50%;
+   margin: 0 0 0 7px;
+   font-size: x-small;
+   font-weight: bold;
+   padding: 0;
+   height: 14px;
+   width: 14px;
+   align-items: center;
+   justify-content: center;
+   outline: none;
+}
+
+.tab-content button:hover {
+    background-color: var(--secondary-low-opacity);
+    color: var(--white);
+}
+
+.tab-content .selected button{
+   color: var(--primary);
+}
+ 
+ .faux-window-body {
+    margin-top: 50px;
+    overflow: auto;
+    max-width: 90vw;
+    height: 96%;
+    display: grid;
+    max-height: 88vh;
+ }
+ 
+ .faux-window-buttons {
+    display: flex;
+    align-items: center;
+
+    flex-direction: row-reverse;
+ }
+ 
+ .red-button,
+ .yellow-button,
+ .green-button {
+    border: none;
+    border-radius: 0;
+    width: 40px;
+    height: 100%;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 0;
+    cursor: pointer;
+ }
+ 
+ .red-button {
+    background-color: transparent;
+    border-radius: 0 var(--rounding) 0 0;
+    font-size: .6em;
+ 
+    transform: scale(1);
+    animation: red-pulse 2s infinite;
+ }
+
+ .red-button:after {
+    content: "X";
+    color: var(--white);
+ }
+
+ .red-button:hover {
+    background-color: var(--red-button);
+ }
+ 
+ @keyframes red-pulse {
+ 0% {
+    box-shadow: 0 0 0 0 var(--red-button);
+ }
+ 
+ 70% {
+    box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
+ }
+ 
+ 100% {
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+ }
+ }
+ 
+ .yellow-button {
+    background-color: transparent;
+
+    order: 1;
+ }
+
+ .yellow-button:after {
+    content: "\2014";
+    color: var(--white);
+ }
+
+ .yellow-button:hover {
+    background-color: var(--yellow-button);
+ }
+ 
+ .green-button {
+    font-size: .6em;
+    background-color: transparent;
+ }
+
+ .green-button:after {
+    content: "\25A2";
+    color: var(--white);
+ }
+
+ .green-button:hover {
+    background-color: var(--green-button);
+ }
+
+ .minimize-effect {
+    background-color: transparent;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform-origin: left bottom;
+    transform: translate(-50%, -50%) scale(1);
+    animation: windowsShrink .5s ease forwards;
+  }
+ 
+ @keyframes windowsShrink {
+    0% {
+      transform: translate(-50%, -50%) scale(1); /* Start from the center and original size */
+    }
+    100% {
+      transform: translate(-100%, 100%) scale(0.1); /* End at the bottom-left corner, 10% size, opacity 0 */
+      opacity: 0;
+    }
+  }
+ 
+/*****
+ * Dock
+ ***********/
+
+ .dock {
+    background-color: var(--primary);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    transform: translateX(0);
+    display: flex;
+    justify-content: flex-start;
+    padding: 0;
+    border-radius: 0;
+    width: calc(100%);
+    max-width: 100vw;
+  }
+ 
+  .dock-right,
+  .dock-left {
+    display: flex;
+    width: auto;
+    justify-content: left;
+  }
+ 
+  .dock-right {
+    justify-content: left;
+    margin-left: 18px;  /* hard coded to make sure the button groups left/rigth are as close as possible */
+  }
+ 
+  .hover-button {
+    background-color: var(--secondary-med-opacity);
+    border: none;
+    padding: 1% 2%;
+    margin: 3px 1px;
+    box-sizing: content-box;
+    color: var(--white);
+    justify-items: center;
+    border-radius: var(--rounding);
+    cursor: pointer;
+    position: relative;
+  }
+  
+  .hover-button::after {
+    content: attr(data-name);
+    position: absolute;
+    top: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: var(--white);
+    padding: 5px 10px;
+    border-radius: 5px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+
+  .hover-button:hover {
+    background-color: var(--secondary-low-opacity);
+  }
+  
+  /* Show button name on hover */
+  .hover-button:hover::after {
+    opacity: 1;
+  }
+ 
+  @keyframes pulseAnimation {
+   0%, 100% {
+     background-color: transparent;
+     box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.2);
+   }
+   50% {
+     background-color: var(--secondary);
+     box-shadow: 0 0 0 20px rgba(0, 0, 0, 0);
+   }
+ }
+  
+  .idle-motion {
+    animation: pulseAnimation 1.5s infinite;
+    animation-delay: calc(0.1s * var(--delay));
+    animation-fill-mode: forwards;
+    transform: translateY(0) scaleX(1) scaleY(1) rotate(0deg);
+  }
+  
+  .idle-motion:hover {
+    animation-play-state: paused;
+    transform: translateY(0) scale(1) rotate(0deg) !important;
+    background-color: transparent !important;
+    box-shadow: none !important;
+  }
+  
+  .idle-motion:nth-child(1) {
+    --delay: 0;
+  }
+  .idle-motion:nth-child(2) {
+    --delay: 3;
+  }
+  .idle-motion:nth-child(3) {
+    --delay: 7;
+  }
+ 
+  .dock img {
+     width: 50px;
+     height: 50px;
+     background-size: cover;
+  }
+
+/*****
+ * Navbar
+ ***********/
+
+#nav {
+    background-color: var(--primary);
+    display: flex;
+    justify-content: flex-end;
+    position: absolute;
+    right: 0;
+    top: calc(100% - 50px);
+    z-index: 2;
+    width: auto;
+    height: auto;
+    font-size: 1em;
+    align-items: center;
+}
+
+.calendar {
+    position: absolute !important;
+    top: auto;
+    bottom: 65px;
+    right: 1vw;  /* match nav button padding */
+    background-color: var(--secondary) !important;
+    z-index: 3;
+    border: 1px solid var(--primary);
+}
+
+.nav-links {
+    position: absolute;
+    left: auto;
+    right: 300px;
+    top: auto;
+    bottom: 65px;
+    font-size: 1em;
+    border-radius: var(--rounding);
+    background-color: var(--secondary);
+    border: 1px solid var(--primary);
+    z-index: 3;
+}
+
+/****
+ * Editor
+ ****/
+ button.add-file {
+   display: flex;
+   background-color: transparent;
+   color: var(--secondary);
+   border-radius: 50%;
+   padding: 2px 5px;
+   margin: 0;
+
+   font-size: .85em;
+   width: 20px;
+   height: 20px;
+}
+
+button.add-file:hover {
+   background-color: var(--secondary-low-opacity);
+   opacity: 1;
+}
+
+.add-file-popup {
+   display: flex;
+}
+
+.add-file-popup input {
+   width: 100%;
+   height: 98%;
+   min-width: 50px;
+   border-radius: calc(var(--rounding) - 2px) 0 0 calc(var(--rounding) - 2px);
+   border: none;
+   padding-left: 3px;
+   font-size: 1em;
+   max-width: 100px;
+}
+
+button.add-file-btn {
+   background-color: var(--primary);
+   border-radius: 0 calc(var(--rounding) - 2px) calc(var(--rounding) - 2px) 0;
+   padding: 5px 10px;
+   margin: 0;
+   height: 98%;
+}
+
+button.add-file-btn:hover {
+   background-color: var(--secondary-low-opacity);
+   opacity: 1;
+}
+
+/****
+ * Screen resolution juggling
+ ****/
+@media screen and (max-width: 700px) {
+
+}

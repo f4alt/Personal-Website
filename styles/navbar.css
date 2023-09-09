@@ -1,0 +1,31 @@
+/*****
+ * Navbar
+ ***********/
+
+#nav button {
+    color: var(--white);
+    background-color: transparent;
+    border: none;
+    padding: 5px 1vw;
+    border-radius: var(--rounding);
+    font-size: 1.25em;
+}
+
+#nav button:hover {
+    background-color: var(--secondary-low-opacity);
+}
+
+.nav-links a {
+    color: var(--primary);
+    display: block;
+    padding: 1vh;
+    text-decoration: none;
+    font-size: 1.25em;
+    text-align: center;
+}
+
+.nav-links a:hover {
+    background-color: var(--primary);
+    color: var(--secondary);
+    border-radius: calc(var(--rounding) + 10px);
+}

@@ -1,0 +1,102 @@
+.faux-window-body {
+    overflow-x: hidden;
+}
+
+.fullscreen .terminal {
+    width: 88vw;
+}
+
+.terminal {
+    display: flex;
+    flex-direction: column;
+    left: 1%;
+    min-width: 55vw;
+    width: 99%;
+    height: 40vh;
+    user-select: none;
+}
+
+.history-line {
+    padding-left: 8px;
+    overflow: auto;
+    display: flex;
+    color: #173344;
+    align-items: center;
+}
+
+.history-line::-webkit-scrollbar {
+    height: 4px;
+}
+
+.line-entry {
+    display: flex;
+    padding-bottom: 3px;
+}
+
+.prompt {
+    color: var(--terminal-prompt);
+}
+
+.entry {
+    padding-left: 8px;
+    background: none;
+    border: none;
+    font-size: 1em;
+    pointer-events: none;
+    width: 100%;
+
+    caret-color: var(--terminal-prompt);
+}
+
+.entry:focus {
+    outline: none;
+}
+
+table {
+    font-size: .85em;
+    padding-left: 8px;
+    color: #173344;
+}
+
+td:nth-child(even) {
+    width: 70%;
+}
+
+.fs-,
+.fs-red,
+.fs-orange,
+.fs-yellow,
+.fs-green,
+.fs-blue,
+.fs-purple {
+    padding: 8px;
+}
+
+/* default */
+.fs- {
+    color: #173344;
+}
+
+.fs-red {
+    color: #cc0000;
+}
+
+.fs-orange {
+    color: #ffae00
+}
+
+.fs-yellow {
+    color: #e3ff44;
+}
+
+.fs-green {
+    color: #7EF9C2;
+}
+
+.fs-blue {
+    color: #00A2FF;
+}
+
+.fs-purple {
+    color: #a200ff
+}

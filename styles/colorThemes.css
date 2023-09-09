@@ -1,0 +1,125 @@
+.mode-0 {
+    --white: #ffffff;
+    --soft-white: #f0f0f0;
+    --black: #000000;
+    --primary: #173344;
+    --secondary: #97b3bf;
+    --secondary-low-opacity: #97b3bf1e;
+    --secondary-med-opacity: #97b3bfad;
+
+    --red-button: rgb(255, 38, 0);
+    --yellow-button: rgb(245, 245, 0);
+    --green-button: rgb(28, 236, 0);
+
+    --terminal-prompt: #3A4C66;
+
+    --rounding: 8px;
+}
+
+.mode-1 {
+    --white: #ffffff;
+    --soft-white: #f0f0f0;
+    --black: #000000;
+    --primary: #00539C;
+    --secondary: #EEA47F;
+    --secondary-low-opacity: #EEA47F1e;
+    --secondary-med-opacity: #EEA47Fad;
+
+    --red-button: rgb(255, 38, 0);
+    --yellow-button: rgb(245, 245, 0);
+    --green-button: rgb(28, 236, 0);
+
+    --terminal-prompt: #3A4C66;
+
+    --rounding: 8px;
+}
+
+.mode-2 {
+    --white: #ffffff;
+    --soft-white: #f0f0f0;
+    --black: #000000;
+    --primary: #F96167;
+    --secondary: #F9E795;
+    --secondary-low-opacity: #F9E7951e;
+    --secondary-med-opacity: #F9E795ad;
+
+    --red-button: rgb(255, 38, 0);
+    --yellow-button: rgb(245, 245, 0);
+    --green-button: rgb(28, 236, 0);
+
+    --terminal-prompt: #3A4C66;
+
+    --rounding: 8px;
+}
+
+.mode-3 {
+    --white: #ffffff;
+    --soft-white: #f0f0f0;
+    --black: #000000;
+    --primary: #FF69B4;
+    --secondary: #00FFFF;
+    --secondary-low-opacity: #00FFFF1e;
+    --secondary-med-opacity: #00FFFFad;
+
+    --red-button: rgb(255, 38, 0);
+    --yellow-button: rgb(245, 245, 0);
+    --green-button: rgb(28, 236, 0);
+
+    --terminal-prompt: #3A4C66;
+
+    --rounding: 8px;
+}
+
+.mode-4 {
+    --white: #ffffff;
+    --soft-white: #f0f0f0;
+    --black: #000000;
+    --primary: #234E70;
+    --secondary: #FBF8BE;
+    --secondary-low-opacity: #FBF8BE1e;
+    --secondary-med-opacity: #FBF8BEad;
+
+    --red-button: rgb(255, 38, 0);
+    --yellow-button: rgb(245, 245, 0);
+    --green-button: rgb(28, 236, 0);
+
+    --terminal-prompt: #3A4C66;
+
+    --rounding: 8px;
+}
+
+.mode-5 {
+    --white: #ffffff;
+    --soft-white: #f0f0f0;
+    --black: #000000;
+    --primary: #000000;
+    --secondary: #f0f0f0;
+    --secondary-low-opacity: #f0f0f01e;
+    --secondary-med-opacity: #f0f0f0ad;
+
+    --red-button: rgb(255, 38, 0);
+    --yellow-button: rgb(245, 245, 0);
+    --green-button: rgb(28, 236, 0);
+
+    --terminal-prompt: #3A4C66;
+
+    --rounding: 8px;
+}
+
+.mode-6 {
+    --white: #ffffff;
+    --soft-white: #f0f0f0;
+    --black: #000000;
+    --primary: #060e57;
+    --secondary: #ebebeb;
+    --secondary-low-opacity: #ebebeb1e;
+    --secondary-med-opacity: #ebebebad;
+
+    --red-button: rgb(255, 38, 0);
+    --yellow-button: rgb(245, 245, 0);
+    --green-button: rgb(28, 236, 0);
+
+    --terminal-prompt: #3A4C66;
+
+    --rounding: 8px;
+}
