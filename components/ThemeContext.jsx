@@ -24,19 +24,11 @@ const colorOptions = [
 
 const ThemeProvider = ({children}) => {
   const [env, setEnv] = useState('mac');
+  const [prevEnv, setPrevEnv] = useState(env);
   const [color, setColor] = useState(colorOptions[0]);
 
   const toggleEnv = () => {
     setEnv(env === 'mac' ? 'windows' : 'mac');
-  };
-
-  const removeThemeStylesheet = (stylesheetName) => {
-    const links = document.head.querySelectorAll('link[rel="stylesheet"]');
-    links.forEach((link) => {
-      if (link.href.includes(stylesheetName)) {
-        link.parentNode.removeChild(link);
-      }
-    });
   };
 
   const updateStyles = () => {
@@ -46,21 +38,9 @@ const ThemeProvider = ({children}) => {
         document.documentElement.classList.remove(className);
       }
     });
-    // remove the old env stylesheets
-    removeThemeStylesheet('mac.css');
-    removeThemeStylesheet('windows.css');
-    removeThemeStylesheet('mobile.css');
 
     // add current color mode
     document.documentElement.classList.add(`mode-${color.mode}`);
-
-    // add selected env stylesheet
-    const link = document.createElement('link');
-    link.rel = 'stylesheet';
-    link.href = '../styles/environments/' + env + '.css';
-
-    const head = document.head || document.getElementsByTagName('head')[0];
-    head.appendChild(link);
   };
 
   useLayoutEffect(() => {
@@ -71,16 +51,12 @@ const ThemeProvider = ({children}) => {
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth < 768) {
-        removeThemeStylesheet('mobile.css');
-
-        const link = document.createElement('link');
-        link.rel = 'stylesheet';
-        link.href = '../styles/environments/mobile.css';
-
-        const head = document.head || document.getElementsByTagName('head')[0];
-        head.appendChild(link);
+        setPrevEnv(env);
+        setEnv('mobile');
       } else {
-        removeThemeStylesheet('mobile.css');
+        if (env === 'mobile') {
+          setEnv(prevEnv);
+        }
       }
     };
 

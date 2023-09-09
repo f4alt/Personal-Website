@@ -1,22 +1,234 @@
- /****
+/*****
+ * Scrollbar
+ ***********/  
+/* Chrome, Edge, and Safari */
+.mobile *::-webkit-scrollbar {
+  width: 12px;
+}
+ 
+.mobile *::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.mobile *::-webkit-scrollbar-thumb {
+  background-color: var(--primary);
+  border-radius: 20px;
+}
+
+/****
   * Faux Window
   ****/
-.faux-window {
+.mobile .faux-window {
     width: 100vw;
     height: 100vh;
     font-size: medium;
 }
 
-.size-controller {
+.mobile .size-controller {
     height: 100%;
     width: 90vw;
+}
+
+.mobile .faux-window-header {
+   background-color: transparent;
+   position: absolute;
+   top: 0;
+   display: flex;
+   justify-content: space-between;
+   width: 97%;
+   padding: 1%;
+   cursor: default;
+   align-items: center;
+
+   border-radius: 0;
+   flex-direction: row;
+}
+
+.mobile .faux-window-header h3 { 
+   background-color: transparent;
+   border: none;
+   border-radius: var(--rounding) var(--rounding) 0 0;
+   font-size: small;
+   transform: translateX(0);
+   height: 20px;
+   padding: 0 1%;
+}
+
+.mobile .tab-content {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    bottom: auto;
+    left: 100px;
+    width: calc(100% - 100px);
+    height: 20px;
+    transform: translateX(0);
+ }
+
+.mobile .tab {
+    display: flex;
+    flex-direction: row-reverse;
+    background-color: var(--primary);
+    color: var(--secondary);
+    border-radius: calc(var(--rounding) - 2px);
+    padding: 2px 5px;
+    margin: 0 5px;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.mobile .tab h3 {
+   font-size: small;
+   font-weight: normal;
+}
+
+.mobile .tab:hover {
+   background-color: var(--primary);
+}
+
+.mobile .tab.selected {
+   min-width: 50%;
+   background-color: var(--primary);
+   color: var(--secondary);
+}
+
+.mobile .tab-content button {
+   display: none;
+   background-color: transparent;
+   color: var(--secondary);
+   border: none;
+   border-radius: 2px;
+   margin: 0 7px;
+   font-size: x-small;
+   font-weight: bold;
+   padding: 0 3px;
+   height: 100%;
+   width: auto;
+   align-items: center;
+   justify-content: center;
+   outline: none;
+}
+
+.mobile .tab-content button:hover {
+    background-color: var(--secondary-low-opacity);
+    color: var(--white);
+}
+
+.mobile .tab-content .selected button{
+   color: var(--secondary);
+}
+
+.mobile .single-mac-tab {
+   width: 50%;
+   display: block;
+   position: absolute;
+   left: 50%;
+   transform: translateX(-50%);
+}
+
+.mobile .faux-window-body {
+   margin-top: 50px;
+   overflow: auto;
+   max-width: 90vw;
+   height: 96%;
+   display: grid;
+   max-height: 88vh;
+}
+
+.mobile .faux-window-buttons {
+   display: flex;
+   align-items: center;
+
+   flex-direction: row;
+}
+
+.mobile .red-button,
+.mobile .yellow-button,
+.mobile .green-button {
+   border: none;
+   border-radius: 50%;
+   width: 10px;
+   height: 50%;
+   padding: 10px;
+   text-align: center;
+   text-decoration: none;
+   display: inline-block;
+   margin: 0 10px 0 0;
+   cursor: pointer;
+}
+
+.mobile .red-button {
+   background-color: var(--red-button);
+   border-radius: 50%;
+
+   transform: scale(1);
+   animation: red-pulse 2s infinite;
+}
+
+.mobile .red-button:after,
+.mobile .yellow-button:after,
+.mobile .green-button:after {
+    content: "";
+}
+
+@keyframes red-pulse {
+0% {
+   transform: scale(0.95);
+   box-shadow: 0 0 0 0 var(--red-button);
+}
+
+70% {
+   transform: scale(1);
+   box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
+}
+
+100% {
+   transform: scale(0.95);
+   box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+}
+}
+
+.mobile .yellow-button {
+   background-color: var(--yellow-button);
+
+   order: 0;
+}
+
+.mobile .green-button {
+   background-color: var(--green-button);
+}
+
+.mobile .minimize-effect {
+    background-color: transparent;
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform-origin: 50% 0;
+    transform: translate(0) scale(1);
+    animation: genieShrink 1s cubic-bezier(0.39, 0.575, 0.565, 1) forwards;
+}
+
+@keyframes genieShrink {
+   0% {
+       transform: scaleX(1) scaleY(1) translateY(0);
+   }
+   50% {
+       transform: scaleX(0.5) scaleY(1) translateY(50%);
+       opacity: 0.7;
+   }
+   100% {
+      transform: scaleX(.1) scaleY(1) translateY(100%);
+       opacity: 0;
+   }
 }
  
  /*****
   * Dock
   ***********/
  
-  .dock {
+.mobile .dock {
      background-color: var(--primary);
      position: absolute;
      bottom: 0;
@@ -30,19 +242,19 @@
      max-width: 80vw;
    }
   
-   .dock-right,
-   .dock-left {
+.mobile .dock-right,
+.mobile .dock-left {
      display: flex;
      width: 100%;
      justify-content: right;
    }
   
-   .dock-right {
+.mobile .dock-right {
      justify-content: left;
      margin-left: 0;
    }
   
-   .hover-button {
+.mobile .hover-button {
      background-color: var(--secondary);
      border: none;
      padding: 1% 2%;
@@ -55,7 +267,7 @@
      position: relative;
    }
    
-   .hover-button::after {
+.mobile .hover-button::after {
      content: attr(data-name);
      position: absolute;
      top: -50px;
@@ -70,11 +282,11 @@
      transition: opacity 0.3s ease, transform 0.3s ease;
    }
  
-   .hover-button:hover {
+.mobile .hover-button:hover {
      background-color: var(--secondary);
    }
    
-   .hover-button:hover::after {
+.mobile .hover-button:hover::after {
      opacity: 1;
    }
   
@@ -96,31 +308,31 @@
      }
    }
    
-   .idle-motion {
+.mobile .idle-motion {
      animation: emphasizedBounceWithWiggle 2s infinite;
      animation-delay: calc(0.1s * var(--delay));
      animation-fill-mode: forwards;
      transform: translateY(0) scaleX(1) scaleY(1) rotate(0deg);
    }
    
-   .idle-motion:hover {
+.mobile .idle-motion:hover {
      animation-play-state: paused;
      transform: translateY(0) scale(1) rotate(0deg) !important;
      background-color: var(--secondary) !important;
      box-shadow: none;
    }
    
-   .idle-motion:nth-child(1) {
+.mobile .idle-motion:nth-child(1) {
      --delay: 0;
    }
-   .idle-motion:nth-child(2) {
+.mobile .idle-motion:nth-child(2) {
      --delay: 3;
    }
-   .idle-motion:nth-child(3) {
+.mobile .idle-motion:nth-child(3) {
      --delay: 7;
    }
   
-   .dock img {
+.mobile .dock img {
       width: 50px;
       height: 50px;
       background-size: cover;
@@ -130,7 +342,7 @@
   * Navbar
   ***********/
  
- #nav {
+.mobile #nav {
      background-color: var(--primary);
      display: flex;
      justify-content: space-between;
@@ -144,7 +356,7 @@
      align-items: center;
  }
  
- .calendar {
+.mobile .calendar {
      position: absolute !important;
      top: 35px;
      bottom: auto;
@@ -154,7 +366,7 @@
      border: 1px solid var(--primary);
  }
  
- .nav-links {
+.mobile .nav-links {
      position: absolute;
      left: 5px;
      right: auto;
@@ -170,7 +382,7 @@
  /****
   * Editor
   ****/
- button.add-file {
+.mobile button.add-file {
     display: flex;
     background-color: var(--primary);
     color: var(--secondary);
@@ -183,16 +395,16 @@
     height: auto;
  }
  
- button.add-file:hover {
+.mobile button.add-file:hover {
     background-color: var(--primary);
     opacity: .7;
  }
  
- .add-file-popup {
+.mobile .add-file-popup {
     display: flex;
  }
  
- .add-file-popup input {
+.mobile .add-file-popup input {
     width: 100%;
     height: 100%;
     min-width: 50px;
@@ -203,7 +415,7 @@
     max-width: 100px;
  }
  
- button.add-file-btn {
+.mobile button.add-file-btn {
     background-color: var(--primary);
     border-radius: 0 calc(var(--rounding) - 2px) calc(var(--rounding) - 2px) 0;
     padding: 5px 7px;
@@ -211,7 +423,7 @@
     height: auto;
  }
  
- button.add-file-btn:hover {
+.mobile button.add-file-btn:hover {
     background-color: var(--primary);
     opacity: .7;
  }
@@ -220,7 +432,7 @@
   * Screen resolution juggling
   ****/
  @media screen and (max-width: 650px) {
-    .single-mac-tab {
+    .mobile .single-mac-tab {
       position: initial;
       width: 100%;
       transform: translateX(0);

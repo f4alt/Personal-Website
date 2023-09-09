@@ -2,8 +2,8 @@ import React, {useState} from 'react';
 import {useThemeEnv} from './ThemeContext';
 
 const ThemeSelector = () => {
-  const [isChecked, setIsChecked] = useState(true);
   const {env, toggleEnv} = useThemeEnv();
+  const [isChecked, setIsChecked] = useState(env == 'mac');
 
   const handleToggleEnv = () => {
     setIsChecked((prevChecked) => !prevChecked);

@@ -2,15 +2,15 @@
  * Scrollbar
  ***********/  
 /* Chrome, Edge, and Safari */
-*::-webkit-scrollbar {
+.windows *::-webkit-scrollbar {
     width: 12px;
  }
    
- *::-webkit-scrollbar-track {
+.windows *::-webkit-scrollbar-track {
     background: transparent;
  }
  
- *::-webkit-scrollbar-thumb {
+.windows *::-webkit-scrollbar-thumb {
     background-color: var(--primary);
     border-radius: 0;
  }
@@ -19,7 +19,7 @@
  * Faux Window
  ***********/  
  
- .faux-window-header {
+.windows .faux-window-header {
     background-color: var(--primary);
     position: absolute;
     top: 0;
@@ -34,7 +34,7 @@
     flex-direction: row-reverse;
  }
 
- .faux-window-header h3 { 
+.windows .faux-window-header h3 { 
     background-color: transparent;
     border: none;
     border-radius: var(--rounding) var(--rounding) 0 0;
@@ -44,7 +44,7 @@
     padding: 0 1%;
  }
 
- .tab-content {
+.windows .tab-content {
     display: flex;
     align-items: center;
     position: absolute;
@@ -55,7 +55,7 @@
     transform: translateX(0);
  }
 
-.tab {
+.windows .tab {
    display: flex;
    flex-direction: row;
    background-color: var(--primary);
@@ -69,22 +69,22 @@
    overflow: hidden;
 }
 
-.tab h3 {
+.windows .tab h3 {
    font-size: small;
    font-weight: normal;
 }
 
-.tab:hover {
+.windows .tab:hover {
    background-color: var(--secondary-low-opacity);
 }
 
-.tab.selected {
+.windows .tab.selected {
    min-width: 100px;
    background-color: var(--secondary);
    color: var(--primary);
 }
 
-.tab-content button {
+.windows .tab-content button {
    display: flex;
    background-color: transparent;
    color: var(--secondary);
@@ -101,16 +101,16 @@
    outline: none;
 }
 
-.tab-content button:hover {
+.windows .tab-content button:hover {
     background-color: var(--secondary-low-opacity);
     color: var(--white);
 }
 
-.tab-content .selected button{
+.windows .tab-content .selected button{
    color: var(--primary);
 }
  
- .faux-window-body {
+.windows .faux-window-body {
     margin-top: 50px;
     overflow: auto;
     max-width: 90vw;
@@ -119,16 +119,16 @@
     max-height: 88vh;
  }
  
- .faux-window-buttons {
+.windows .faux-window-buttons {
     display: flex;
     align-items: center;
 
     flex-direction: row-reverse;
  }
  
- .red-button,
- .yellow-button,
- .green-button {
+.windows .red-button,
+.windows .yellow-button,
+.windows .green-button {
     border: none;
     border-radius: 0;
     width: 40px;
@@ -141,7 +141,7 @@
     cursor: pointer;
  }
  
- .red-button {
+.windows .red-button {
     background-color: transparent;
     border-radius: 0 var(--rounding) 0 0;
     font-size: .6em;
@@ -150,12 +150,12 @@
     animation: red-pulse 2s infinite;
  }
 
- .red-button:after {
+.windows .red-button:after {
     content: "X";
     color: var(--white);
  }
 
- .red-button:hover {
+.windows .red-button:hover {
     background-color: var(--red-button);
  }
  
@@ -173,36 +173,36 @@
  }
  }
  
- .yellow-button {
+.windows .yellow-button {
     background-color: transparent;
 
     order: 1;
  }
 
- .yellow-button:after {
+.windows .yellow-button:after {
     content: "\2014";
     color: var(--white);
  }
 
- .yellow-button:hover {
+.windows .yellow-button:hover {
     background-color: var(--yellow-button);
  }
  
- .green-button {
+.windows .green-button {
     font-size: .6em;
     background-color: transparent;
  }
 
- .green-button:after {
+.windows .green-button:after {
     content: "\25A2";
     color: var(--white);
  }
 
- .green-button:hover {
+.windows .green-button:hover {
     background-color: var(--green-button);
  }
 
- .minimize-effect {
+.windows .minimize-effect {
     background-color: transparent;
     position: absolute;
     left: 50%;
@@ -226,7 +226,7 @@
  * Dock
  ***********/
 
- .dock {
+.windows .dock {
     background-color: var(--primary);
     position: fixed;
     bottom: 0;
@@ -240,19 +240,19 @@
     max-width: 100vw;
   }
  
-  .dock-right,
-  .dock-left {
+.windows .dock-right,
+.windows .dock-left {
     display: flex;
     width: auto;
     justify-content: left;
   }
  
-  .dock-right {
+.windows .dock-right {
     justify-content: left;
     margin-left: 18px;  /* hard coded to make sure the button groups left/rigth are as close as possible */
   }
  
-  .hover-button {
+.windows .hover-button {
     background-color: var(--secondary-med-opacity);
     border: none;
     padding: 1% 2%;
@@ -265,7 +265,7 @@
     position: relative;
   }
   
-  .hover-button::after {
+.windows .hover-button::after {
     content: attr(data-name);
     position: absolute;
     top: -50px;
@@ -280,12 +280,12 @@
     transition: opacity 0.3s ease, transform 0.3s ease;
   }
 
-  .hover-button:hover {
+.windows .hover-button:hover {
     background-color: var(--secondary-low-opacity);
   }
   
   /* Show button name on hover */
-  .hover-button:hover::after {
+.windows .hover-button:hover::after {
     opacity: 1;
   }
  
@@ -300,31 +300,31 @@
    }
  }
   
-  .idle-motion {
+.windows .idle-motion {
     animation: pulseAnimation 1.5s infinite;
     animation-delay: calc(0.1s * var(--delay));
     animation-fill-mode: forwards;
     transform: translateY(0) scaleX(1) scaleY(1) rotate(0deg);
   }
   
-  .idle-motion:hover {
+.windows .idle-motion:hover {
     animation-play-state: paused;
     transform: translateY(0) scale(1) rotate(0deg) !important;
     background-color: transparent !important;
     box-shadow: none !important;
   }
   
-  .idle-motion:nth-child(1) {
+.windows .idle-motion:nth-child(1) {
     --delay: 0;
   }
-  .idle-motion:nth-child(2) {
+.windows .idle-motion:nth-child(2) {
     --delay: 3;
   }
-  .idle-motion:nth-child(3) {
+.windows .idle-motion:nth-child(3) {
     --delay: 7;
   }
  
-  .dock img {
+.windows .dock img {
      width: 50px;
      height: 50px;
      background-size: cover;
@@ -334,7 +334,7 @@
  * Navbar
  ***********/
 
-#nav {
+.windows #nav {
     background-color: var(--primary);
     display: flex;
     justify-content: flex-end;
@@ -348,7 +348,7 @@
     align-items: center;
 }
 
-.calendar {
+.windows .calendar {
     position: absolute !important;
     top: auto;
     bottom: 65px;
@@ -358,7 +358,7 @@
     border: 1px solid var(--primary);
 }
 
-.nav-links {
+.windows .nav-links {
     position: absolute;
     left: auto;
     right: 300px;
@@ -374,7 +374,7 @@
 /****
  * Editor
  ****/
- button.add-file {
+.windows button.add-file {
    display: flex;
    background-color: transparent;
    color: var(--secondary);
@@ -387,16 +387,16 @@
    height: 20px;
 }
 
-button.add-file:hover {
+.windows button.add-file:hover {
    background-color: var(--secondary-low-opacity);
    opacity: 1;
 }
 
-.add-file-popup {
+.windows .add-file-popup {
    display: flex;
 }
 
-.add-file-popup input {
+.windows .add-file-popup input {
    width: 100%;
    height: 98%;
    min-width: 50px;
@@ -407,7 +407,7 @@ button.add-file:hover {
    max-width: 100px;
 }
 
-button.add-file-btn {
+.windows button.add-file-btn {
    background-color: var(--primary);
    border-radius: 0 calc(var(--rounding) - 2px) calc(var(--rounding) - 2px) 0;
    padding: 5px 10px;
@@ -415,7 +415,7 @@ button.add-file-btn {
    height: 98%;
 }
 
-button.add-file-btn:hover {
+.windows button.add-file-btn:hover {
    background-color: var(--secondary-low-opacity);
    opacity: 1;
 }

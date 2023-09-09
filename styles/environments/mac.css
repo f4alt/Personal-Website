@@ -2,15 +2,15 @@
  * Scrollbar
  ***********/  
 /* Chrome, Edge, and Safari */
-*::-webkit-scrollbar {
+.mac *::-webkit-scrollbar {
    width: 12px;
 }
   
-*::-webkit-scrollbar-track {
+.mac *::-webkit-scrollbar-track {
    background: transparent;
 }
 
-*::-webkit-scrollbar-thumb {
+.mac *::-webkit-scrollbar-thumb {
    background-color: var(--primary);
    border-radius: 20px;
 }
@@ -19,7 +19,7 @@
 /****
  * Faux Window
  ****/
-.faux-window-header {
+.mac .faux-window-header {
    background-color: transparent;
    position: absolute;
    top: 0;
@@ -34,7 +34,7 @@
    flex-direction: row;
 }
 
-.faux-window-header h3 { 
+.mac .faux-window-header h3 { 
    background-color: transparent;
    border: none;
    border-radius: var(--rounding) var(--rounding) 0 0;
@@ -44,7 +44,7 @@
    padding: 0 1%;
 }
 
- .tab-content {
+.mac .tab-content {
     display: flex;
     align-items: center;
     position: absolute;
@@ -55,7 +55,7 @@
     transform: translateX(0);
  }
 
- .tab {
+.mac .tab {
     display: flex;
     flex-direction: row-reverse;
     background-color: var(--primary);
@@ -69,22 +69,22 @@
     overflow: hidden;
 }
 
-.tab h3 {
+.mac .tab h3 {
    font-size: small;
    font-weight: normal;
 }
 
-.tab:hover {
+.mac .tab:hover {
    background-color: var(--primary);
 }
 
-.tab.selected {
+.mac .tab.selected {
    min-width: 50%;
    background-color: var(--primary);
    color: var(--secondary);
 }
 
-.tab-content button {
+.mac .tab-content button {
    display: none;
    background-color: transparent;
    color: var(--secondary);
@@ -101,16 +101,16 @@
    outline: none;
 }
 
-.tab-content button:hover {
+.mac .tab-content button:hover {
     background-color: var(--secondary-low-opacity);
     color: var(--white);
 }
 
-.tab-content .selected button{
+.mac .tab-content .selected button{
    color: var(--secondary);
 }
 
-.single-mac-tab {
+.mac .single-mac-tab {
    width: 50%;
    display: block;
    position: absolute;
@@ -118,7 +118,7 @@
    transform: translateX(-50%);
 }
 
-.faux-window-body {
+.mac .faux-window-body {
    margin-top: 50px;
    overflow: auto;
    max-width: 90vw;
@@ -127,16 +127,16 @@
    max-height: 88vh;
 }
 
-.faux-window-buttons {
+.mac .faux-window-buttons {
    display: flex;
    align-items: center;
 
    flex-direction: row;
 }
 
-.red-button,
-.yellow-button,
-.green-button {
+.mac .red-button,
+.mac .yellow-button,
+.mac .green-button {
    border: none;
    border-radius: 50%;
    width: 10px;
@@ -149,7 +149,7 @@
    cursor: pointer;
 }
 
-.red-button {
+.mac .red-button {
    background-color: var(--red-button);
    border-radius: 50%;
 
@@ -157,9 +157,9 @@
    animation: red-pulse 2s infinite;
 }
 
-.red-button:after,
-.yellow-button:after,
-.green-button:after {
+.mac .red-button:after,
+.mac .yellow-button:after,
+.mac .green-button:after {
     content: "";
 }
 
@@ -180,17 +180,17 @@
 }
 }
 
-.yellow-button {
+.mac .yellow-button {
    background-color: var(--yellow-button);
 
    order: 0;
 }
 
-.green-button {
+.mac .green-button {
    background-color: var(--green-button);
 }
 
-.minimize-effect {
+.mac .minimize-effect {
     background-color: transparent;
     position: absolute;
     left: 0;
@@ -218,7 +218,7 @@
  * Dock
  ***********/
 
- .dock {
+.mac .dock {
     background-color: var(--primary);
     position: absolute;
     bottom: 8px;
@@ -232,19 +232,19 @@
     max-width: 80vw;
   }
  
-  .dock-right,
-  .dock-left {
+.mac .dock-right,
+.mac .dock-left {
     display: flex;
     width: 100%;
     justify-content: right;
   }
  
-  .dock-right {
+.mac .dock-right {
     justify-content: left;
     margin-left: 0;
   }
  
-  .hover-button {
+.mac .hover-button {
     background-color: var(--secondary);
     border: none;
     padding: 1% 2%;
@@ -257,7 +257,7 @@
     position: relative;
   }
   
-  .hover-button::after {
+.mac .hover-button::after {
     content: attr(data-name);
     position: absolute;
     top: -50px;
@@ -272,11 +272,11 @@
     transition: opacity 0.3s ease, transform 0.3s ease;
   }
 
-  .hover-button:hover {
+.mac .hover-button:hover {
     background-color: var(--secondary);
   }
   
-  .hover-button:hover::after {
+.mac .hover-button:hover::after {
     opacity: 1;
   }
  
@@ -298,31 +298,31 @@
     }
   }
   
-  .idle-motion {
+.mac .idle-motion {
     animation: emphasizedBounceWithWiggle 2s infinite;
     animation-delay: calc(0.1s * var(--delay));
     animation-fill-mode: forwards;
     transform: translateY(0) scaleX(1) scaleY(1) rotate(0deg);
   }
   
-  .idle-motion:hover {
+.mac .idle-motion:hover {
     animation-play-state: paused;
     transform: translateY(0) scale(1) rotate(0deg) !important;
     background-color: var(--secondary) !important;
     box-shadow: none;
   }
   
-  .idle-motion:nth-child(1) {
+.mac .idle-motion:nth-child(1) {
     --delay: 0;
   }
-  .idle-motion:nth-child(2) {
+.mac .idle-motion:nth-child(2) {
     --delay: 3;
   }
-  .idle-motion:nth-child(3) {
+.mac .idle-motion:nth-child(3) {
     --delay: 7;
   }
  
-  .dock img {
+.mac .dock img {
      width: 50px;
      height: 50px;
      background-size: cover;
@@ -332,7 +332,7 @@
  * Navbar
  ***********/
 
-#nav {
+.mac #nav {
     background-color: var(--primary);
     display: flex;
     justify-content: space-between;
@@ -346,7 +346,7 @@
     align-items: center;
 }
 
-.calendar {
+.mac .calendar {
     position: absolute !important;
     top: 35px;
     bottom: auto;
@@ -356,7 +356,7 @@
     border: 1px solid var(--primary);
 }
 
-.nav-links {
+.mac .nav-links {
     position: absolute;
     left: 5px;
     right: auto;
@@ -372,7 +372,7 @@
 /****
  * Editor
  ****/
-button.add-file {
+.mac button.add-file {
    display: flex;
    background-color: var(--primary);
    color: var(--secondary);
@@ -385,16 +385,16 @@ button.add-file {
    height: auto;
 }
 
-button.add-file:hover {
+.mac button.add-file:hover {
    background-color: var(--primary);
    opacity: .7;
 }
 
-.add-file-popup {
+.mac .add-file-popup {
    display: flex;
 }
 
-.add-file-popup input {
+.mac .add-file-popup input {
    width: 100%;
    height: 100%;
    min-width: 50px;
@@ -405,7 +405,7 @@ button.add-file:hover {
    max-width: 100px;
 }
 
-button.add-file-btn {
+.mac button.add-file-btn {
    background-color: var(--primary);
    border-radius: 0 calc(var(--rounding) - 2px) calc(var(--rounding) - 2px) 0;
    padding: 5px 7px;
@@ -413,7 +413,7 @@ button.add-file-btn {
    height: auto;
 }
 
-button.add-file-btn:hover {
+.mac button.add-file-btn:hover {
    background-color: var(--primary);
    opacity: .7;
 }
@@ -422,7 +422,7 @@ button.add-file-btn:hover {
  * Screen resolution juggling
  ****/
 @media screen and (max-width: 650px) {
-   .single-mac-tab {
+   .mac .single-mac-tab {
      position: initial;
      width: 100%;
      transform: translateX(0);

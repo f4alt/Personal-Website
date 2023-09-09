@@ -1,11 +1,14 @@
 import '../styles/globals.css';
 import '../styles/colorThemes.css';
+import '../styles/environments/mac.css';
+import '../styles/environments/windows.css';
+import '../styles/environments/mobile.css';
 
 import React, {useState, useCallback} from 'react';
 import Particles from 'react-tsparticles';
 import {loadSlim} from 'tsparticles-slim';
 
-import {useThemeCol} from '../components/ThemeContext';
+import { useThemeEnv, useThemeCol } from '../components/ThemeContext';
 import Nav from '../components/Nav';
 import Help_Modal from '../components/Modals/Help_Modal';
 import About_Modal from '../components/Modals/About_Modal';
@@ -15,6 +18,7 @@ import Terminal_Modal from '../components/Modals/Terminal_Modal';
 import Editor_Modal from '../components/Modals/Editor_Modal';
 
 export default function App() {
+  const {env, toggleEnv} = useThemeEnv();
   const [showHelp, setShowHelp] = useState(true);
   const [showAbout, setShowAbout] = useState(false);
   const [showContact, setShowContact] = useState(false);
@@ -39,7 +43,7 @@ export default function App() {
   }
 
   return (
-    <>
+    <div className={env}>
       <Nav showHelp={showHelp} setShowHelp={setShowHelp} closeAll={closeAll}/>
       <main>
         {/* load modals */}
@@ -98,7 +102,7 @@ export default function App() {
           </div>
         </div>
       </main>
-    </>
+    </div>
   );
 };
 
