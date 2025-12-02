@@ -17,3 +17,4 @@
 
 # local env files
 .env*.local
+deploy.env
