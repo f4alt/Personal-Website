@@ -4,6 +4,29 @@ This directory contains the scripts used to provision a fresh server and deploy 
 The workflow covers DNS setup, server bootstrapping, nginx configuration, SSL certificates, and automatic deployments.
 
 ---
+## 0. Server Spin-up
+
+Assuming this is a fresh server, add a user and very simple hardening:
+
+```bash
+sudo ./first-login.sh
+```
+
+This script:
+
+- apt update/upgrade
+- create DEPLOY_USER user (if not exists)
+- add DEPLOY_USER to sudo
+- disable root SSH login (but keep password login for users)
+- configure UFW, Fail2ban, unattended security updates
+
+(OPTIONAL SUBSEQUENT RUN; after verifying basic login):
+```bash
+sudo ./first-login.sh --ssh-only-login-setup
+```
+- enforce SSH key-only authentication (PasswordAuthentication no)
+
+---
 
 ## 1. Configure DNS
 
