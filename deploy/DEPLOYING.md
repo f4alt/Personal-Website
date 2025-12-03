@@ -20,10 +20,15 @@ This script:
 - disable root SSH login (but keep password login for users)
 - configure UFW, Fail2ban, unattended security updates
 
-(OPTIONAL SUBSEQUENT RUN; after verifying basic login):
+---
+
+## 0.5. OPTIONAL SUBSEQUENT RUN; after verifying basic login:
+
 ```bash
 sudo ./first-login.sh --ssh-only-login-setup
 ```
+
+This will:
 - enforce SSH key-only authentication (PasswordAuthentication no)
 
 ---
